@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/Person.js"></script>
+</head>
+<body>
+<div class="map" id="firstFloor"></div>
+</body>
+
+<script>
+var personOne = new Person();
+    personOne.xCord = 400;
+    personOne.yCord = 300;
+    var map = document.getElementById("firstFloor");
+    var personLocation = document.createElement("div");
+    personLocation.setAttribute("class", "circle");
+    personLocation.setAttribute("id", "person2");
+    personLocation.style.left = personOne.xCord + "px";
+    personLocation.style.top = personOne.yCord + "px";
+    map.appendChild(personLocation);
+
+$(document).ready(function() {
+        (function pulse(){
+            $(".circle").delay(200).fadeOut('slow').delay(50).fadeIn('slow',pulse);
+        })();
+    });
+
+
+</script>
+</html>

@@ -1,0 +1,19 @@
+.map{
+    background-image: url("../img/zappos_level_01_lbl.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 738px;
+    width: auto;
+
+}
+
+
+.circle{
+    position: absolute;
+    height:15px;
+    width:15px;
+    border-radius: 45px;
+    background:red;
+}
+
+
