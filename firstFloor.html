@@ -6,22 +6,30 @@
     <link rel="stylesheet" type="text/css" href="css/default.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="js/Person.js"></script>
+    <script src="js/test.js"></script>
 </head>
 <body>
 <div class="map" id="firstFloor"></div>
 </body>
 
 <script>
+    /*
 var personOne = new Person();
     personOne.xCord = 400;
     personOne.yCord = 300;
+    */
     var map = document.getElementById("firstFloor");
-    var personLocation = document.createElement("div");
-    personLocation.setAttribute("class", "circle");
-    personLocation.setAttribute("id", "person2");
-    personLocation.style.left = personOne.xCord + "px";
-    personLocation.style.top = personOne.yCord + "px";
-    map.appendChild(personLocation);
+
+    var personArr = createObjects(10);
+    for(var x = 0; x < personArr.length; x++ ) {
+        var person = personArr[x];
+        var personLocation = document.createElement("div");
+        personLocation.setAttribute("class", "circle");
+        personLocation.setAttribute("id", "person" + x);
+        personLocation.style.left = person.xCord + "px";
+        personLocation.style.top = person.yCord + "px";
+        map.appendChild(personLocation);
+    }
 
 $(document).ready(function() {
         (function pulse(){
